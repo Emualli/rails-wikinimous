@@ -1,4 +1,5 @@
 <h1>Our Articles</h1>
 <% @articles.each do |a| %>
-<p>Article <%= a.id %> - <%= a.title %></p>
+<p><%= link_to "<span style='border: 1px black solid; border-radius: 8px; padding: 2px; cursor:pointer;'>X</span>".html_safe, article_path(a), method: :delete, data: { confirm: 'Really ?' } %>&nbsp;Article <%= a.id %> - <%= link_to a.title, article_path(a.id) %>&nbsp;(<%= link_to 'Edit', edit_article_path(a.id) %>)</p>
 <% end %>
+<p style="margin-top: 40px;"><%= link_to 'Créer un nouvel article', new_article_path %></p>
