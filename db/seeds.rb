@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+10.times do
+  article = Article.new(title: Faker::Hipster.sentence(3), content: Faker::Hipster.paragraph)
+  article.save
+end
